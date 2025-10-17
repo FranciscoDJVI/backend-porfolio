@@ -34,7 +34,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "corsheaders",
     "rest_framework",
-    "coreapi",
     "api_portfilio",
 ]
 
@@ -140,9 +139,6 @@ CELERY_TASK_TRACK_STARTED = True
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # documentation for api with coreapi.
-REST_FRAMEWORK = {
-    "DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",
-}
 
 # cors config
 CORS_ALLOWED_ORIGINS = [os.environ.get("FRONTEND_URL"), "http://localhost:5173"]
