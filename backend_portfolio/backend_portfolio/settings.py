@@ -14,11 +14,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY_DJANGO")
+if not SECRET_KEY:
+    raise ImproperlyConfigured("La variable de entorno SECRET_KEY es requerida.")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["*"] if DEBUG else [os.environ.get("RENDER_EXTERNAL_HOSTNAME")]
 
 
 # Application definition
