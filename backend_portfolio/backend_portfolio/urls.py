@@ -6,7 +6,7 @@ from drf_spectacular.utils import extend_schema
 from api_portfilio.serializer import RootResponseSerializer
 
 
-@extand_schema(
+@extend_schema(
     responses0={200: RootResponseSerializer},
 )
 @api_view(["GET"])
