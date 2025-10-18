@@ -2,8 +2,13 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from drf_spectacular.utils import extand_schema
+from .serializer import RootResponseSerializer
 
 
+@extand_schema(
+    responses0={200: RootResponseSerializer},
+)
 @api_view(["GET"])
 def api_root_view(request):
     """
