@@ -12,9 +12,9 @@ def api_root_view(request):
     return Response(
         {
             "message": "Bienvenido a la API del Portfolio. Utiliza los siguientes puntos de entrada:",
-            "api_entrypoint": "/portfolio/",
-            "admin": "/admin/",
-            "documentation": "/portfolio/docs/",
+            "api_entrypoint": "/api/v1/",
+            "admin": "api/v1/admin/",
+            "documentation": "api/v1/portfolio/docs/",
         }
     )
 
@@ -24,4 +24,3 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("portfolio/", include("api_portfilio.urls")),
 ]
-
