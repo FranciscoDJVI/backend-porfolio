@@ -12,9 +12,11 @@ def api_root_view(request):
     return Response(
         {
             "message": "Bienvenido a la API del Portfolio. Utiliza los siguientes puntos de entrada:",
-            "api_entrypoint": "/api/v1/api_portfilio/",
+            "api_entrypoint": "api_portfilio/api/v1/api_portfilio/",
             "admin": "/admin/",
-            "documentation": "/api_portfilio/docs/",
+            "documentation redoc": "/api_portfilio/schema/redoc/",
+            "documentation swagger": "/api_portfilio/schema/swagger-ui/",
+            "documentation schema.txt": "/api_portfilio/schema/",
         }
     )
 
