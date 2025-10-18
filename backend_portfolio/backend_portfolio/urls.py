@@ -3,7 +3,7 @@ from django.urls import path, include
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from drf_spectacular.utils import extend_schema
-from ..serializer import RootResponseSerializer
+from api_portfilio.serializer import RootResponseSerializer
 
 
 @extand_schema(
