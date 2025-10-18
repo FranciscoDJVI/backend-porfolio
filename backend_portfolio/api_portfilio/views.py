@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-from .serializer import EmailSerializer
+from .serializers import EmailSerializer
 from .models import Email
 from .tasks import send_notification_email
 
@@ -12,4 +12,3 @@ class EmailViewSet(viewsets.ModelViewSet):
         instance = serializer.save()
 
         send_notification_email.delay(instance.id)
-
