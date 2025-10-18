@@ -1,12 +1,26 @@
 from django.urls import include, path
-from rest_framework.documentation import include_docs_urls
 from rest_framework import routers
 from api_portfilio import views
+from drf_spectacular.views import (
+    SpectacularAPIView,
+    SpectacularSwaggerView,
+    SpectacularRedocView,
+)
 
 router = routers.DefaultRouter()
 router.register(r"api_portfilio", views.EmailViewSet, "api_portfilio")
 
 urlpatterns = [
     path("api/v1/", include(router.urls)),
-    path("docs/", include_docs_urls(title="Documentation portfolio API")),
+    path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
+    path(
+        "api/schema/swagger-ui/",
+        SpectacularSwaggerView.as_view(url_name="schema"),
+        name="swagger-ui",
+    ),
+    path(
+        "api/schema/redoc/",
+        SpectacularRedocView.as_view(url_name="schema"),
+        name="redoc",
+    ),
 ]
