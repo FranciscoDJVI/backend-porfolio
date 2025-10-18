@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "corsheaders",
     "rest_framework",
+    "coreapi",
     "api_portfilio",
 ]
 
@@ -142,3 +143,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # cors config
 CORS_ALLOWED_ORIGINS = [os.environ.get("FRONTEND_URL"), "http://localhost:5173"]
+
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",
+}
