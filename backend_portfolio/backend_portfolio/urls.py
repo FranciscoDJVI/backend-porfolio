@@ -7,7 +7,7 @@ from api_portfilio.serializer import RootResponseSerializer
 
 
 @extend_schema(
-    responses0={200: RootResponseSerializer},
+    responses={200: RootResponseSerializer},
 )
 @api_view(["GET"])
 def api_root_view(request):
