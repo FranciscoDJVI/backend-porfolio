@@ -1,7 +1,8 @@
-from celery import shared_task
+from celery import shared_task, app
 from django.core.mail import EmailMessage
 from django.conf import settings
 from .models import Email
+from smtplib import SMTPException
 
 
 @shared_task(bind=True)
