@@ -124,10 +124,10 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "vanegasfrancisco415@gmail.com"  # Tu correo
-EMAIL_HOST_PASSWORD = "wzri cnjk gapz kxiw"
-DEFAULT_FROM_EMAIL = "vanegasfrancisco415@gmail.com"
-SERVER_EMAIL = "vanegasfrancisco415@gmail.com"
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
+DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL")
+SERVER_EMAIL = os.environ.get("SERVER_EMAIL")
 
 # ceelery config
 CELERY_BROKER_URL = os.environ.get("CELERY_BROKER_URL", "redis://127.0.0.1:6379/0")
