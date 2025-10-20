@@ -141,7 +141,6 @@ CELERY_TIMEZONE = "America/Bogota"
 CELERY_TASK_TRACK_STARTED = True
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-# documentation for api with coreapi.
 
 # cors config
 CORS_ALLOWED_ORIGINS = [os.environ.get("FRONTEND_URL"), "http://localhost:5173"]

@@ -1,4 +1,4 @@
-from celery import shared_task, app
+"""from celery import shared_task, app
 from django.core.mail import EmailMessage
 from django.conf import settings
 from .models import Email
@@ -8,10 +8,8 @@ from smtplib import SMTPException
 @shared_task(bind=True)
 def send_notification_email(self, email_id):
     # Send notification when any user send a email.
-    """
     Tarea Celery para enviar el correo. Recibe el ID del registro
     para cargar la instancia y evitar problemas de serialización.
-    """
     try:
         email_data = Email.objects.get(pk=email_id)
         if email_data:
@@ -30,4 +28,4 @@ def send_notification_email(self, email_id):
         else:
             return f"Error: No se encontró el email con ID {email_id}"
     except Exception as e:
-        self.retry(exc=e, countdown=60)  # Resend in 60 seconds
+        self.retry(exc=e, countdown=60)  # Resend in 60 seconds"""
