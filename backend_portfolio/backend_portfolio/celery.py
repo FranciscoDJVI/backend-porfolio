@@ -1,4 +1,4 @@
-"""import os
+import os
 from celery import Celery
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "backend_portfolio.settings")
@@ -12,4 +12,4 @@ app.autodiscover_tasks()
 
 @app.task(bind=True, ignore_result=True)
 def debug_task(self):
-    print(f"Request: {self.request!r}")"""
+    print(f"Request: {self.request!r}")
