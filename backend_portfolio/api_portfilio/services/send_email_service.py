@@ -1,6 +1,6 @@
 from django.core.mail import send_mail
 from django.conf import settings
-from models import Email
+from .models import Email
 
 
 def send_notification_email(email_id):
