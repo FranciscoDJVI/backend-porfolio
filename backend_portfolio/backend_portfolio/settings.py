@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import ssl
 import dj_database_url
 from dotenv import load_dotenv
 
@@ -148,4 +149,7 @@ CORS_ALLOWED_ORIGINS = [os.environ.get("FRONTEND_URL"), "http://localhost:5173"]
 
 REST_FRAMEWORK = {
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+CELERY_BROKER_USE_SSL = {
+    "ssl_cert_reqs": ssl.CERT_NONE  # Esto permite la conexión segura sin validación estricta de certificado
 }
