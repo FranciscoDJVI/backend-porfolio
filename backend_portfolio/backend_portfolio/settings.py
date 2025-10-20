@@ -131,8 +131,8 @@ DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL")
 SERVER_EMAIL = os.environ.get("SERVER_EMAIL")
 
 # ceelery config
-CELERY_BROKER_URL = os.environ.get("redis://127.0.0.1:6379")
-CELERY_RESULT_BACKEND = os.environ.get("redis://127.0.0.1:6379")
+CELERY_BROKER_URL = "redis://127.0.0.1:6379"
+CELERY_RESULT_BACKEND = "redis://127.0.0.1:6379"
 CELERY_ACCEPT_CONTENT = ["json"]
 CELERY_TASK_SERIALIZER = "json"
 CELERY_RESULT_SERIALIZER = "json"
