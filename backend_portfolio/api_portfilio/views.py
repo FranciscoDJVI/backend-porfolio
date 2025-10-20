@@ -1,7 +1,9 @@
 from rest_framework import viewsets
 from .serializers import EmailSerializer
 from .models import Email
-from .tasks import send_notification_email
+
+# from .tasks import send_notification_email
+from .services.send_email_service import send_notification_email
 
 
 class EmailViewSet(viewsets.ModelViewSet):
