@@ -8,7 +8,7 @@ from drf_spectacular.views import (
 )
 
 router = routers.DefaultRouter()
-router.register(r"api_portfilio", views.EmailViewSet, "api_portfilio")
+router.register(r"api_portfolio", views.EmailViewSet)
 
 urlpatterns = [
     path("api/v1/", include(router.urls)),

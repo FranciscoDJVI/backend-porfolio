@@ -12,11 +12,11 @@ from api_portfilio.serializers import RootResponseSerializer
 @api_view(["GET"])
 def api_root_view(request):
     """
-    Punto de entrada principal para la API.
+    entryendponits for the API.
     """
     return Response(
         {
-            "message": "Bienvenido a la API del Portfolio. Utiliza los siguientes puntos de entrada:",
+            "message": "Wellcome to the API of my personal portfolio. use the next entryendponits:",
             "api_entrypoint": "api_portfilio/api/v1/api_portfilio/",
             "admin": "/admin/",
             "documentation redoc": "/api_portfilio/schema/redoc/",
