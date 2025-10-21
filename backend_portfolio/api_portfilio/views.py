@@ -11,4 +11,4 @@ class EmailViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         instance = serializer.save()
 
-        send_notification_email.delay(instance.pk)
+        # send_notification_email.delay(instance.pk)
