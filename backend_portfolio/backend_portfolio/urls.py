@@ -29,5 +29,5 @@ def api_root_view(request):
 urlpatterns = [
     path("", api_root_view),
     path("admin/", admin.site.urls),
-    path("api_portfolio/", include("api_portfilio.urls")),
+    path("api_portfilio/", include("api_portfilio.urls")),
 ]
