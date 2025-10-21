@@ -7,8 +7,3 @@ from .tasks import send_notification_email
 class EmailViewSet(viewsets.ModelViewSet):
     serializer_class = EmailSerializer
     queryset = Email.objects.all()
-
-    def perform_create(self, serializer):
-        instance = serializer.save()
-
-        # send_notification_email.delay(instance.pk)
